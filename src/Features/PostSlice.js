@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const savePost = createAsyncThunk("posts/savePost", async (postData) => {
   try {
-    const response = await axios.post("http://localhost:8080/savePost", {
+    const response = await axios.post("https://fullstack-server-vuxt.onrender.com/savePost", {
       email: postData.email,
       message: postData.msg,
       lang: postData.lang,
@@ -18,7 +18,7 @@ export const savePost = createAsyncThunk("posts/savePost", async (postData) => {
 
 export const getPosts = createAsyncThunk("posts/getPosts", async () => {
   try {
-    const response = await axios.get("http://localhost:8080/getPosts");
+    const response = await axios.get("https://fullstack-server-vuxt.onrender.com/getPosts");
 
     return response.data.posts;
   } catch (error) {
@@ -30,7 +30,7 @@ export const updatePost = createAsyncThunk(
   "posts/updatePost",
   async (postData) => {
     try {
-      const response = await axios.put("http://localhost:8080/updatePost", {
+      const response = await axios.put("https://fullstack-server-vuxt.onrender.com/updatePost", {
         postMsg: postData.postMsg,
         postId: postData.postId,
       });
@@ -47,7 +47,7 @@ export const deletePost = createAsyncThunk(
   async (postId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/deletePost/${postId}`
+        `https://fullstack-server-vuxt.onrender.com/deletePost/${postId}`
       );
 
       return response.data.message;
