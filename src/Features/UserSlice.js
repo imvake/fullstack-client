@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const addUser = createAsyncThunk("user/addUser", async (userData) => {
   try {
-    const response = await axios.post("http://localhost:8080/insertUser", {
+    const response = await axios.post("https://fullstack-server-vuxt.onrender.com/insertUser", {
       uname: userData.uname,
       password: userData.password,
       email: userData.email,
@@ -18,7 +18,7 @@ export const addUser = createAsyncThunk("user/addUser", async (userData) => {
 
 export const getUser = createAsyncThunk("user/getUser", async (userData) => {
   try {
-    const response = await axios.post("http://localhost:8080/login", {
+    const response = await axios.post("https://fullstack-server-vuxt.onrender.com/login", {
       password: userData.password,
       email: userData.email,
     });
